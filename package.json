@@ -1,0 +1,19 @@
+{
+  "name": "693",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "presentation": "mdx-deck \"./classes/${npm_config_name}.mdx\"",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "code-surfer": "^3.1.0",
+    "mdx-deck": "^3.0.10"
+  },
+  "devDependencies": {
+    "jest": "^28.1.0"
+  }
+}
