@@ -45,7 +45,21 @@ describe('Playlist', () => {
     expect(playlist.isPlaying()).toBe(true);
   });
 
-  test('spy isPlaying', () => {
+  test('verifica se mock anterior ficou no escopo do teste isPlaying', () => {
     expect(playlist.isPlaying()).toBe(false);
+  });
+
+  test('verifica out of bounds qndo executa next mais vezes q a qtd de músicas', () => {
+    const nextMock = jest.spyOn(playlist, 'next');
+
+    playlist.next();
+    playlist.next();
+    playlist.next();
+    playlist.next();
+    playlist.next();
+    playlist.next();
+
+    expect(nextMock).toHaveBeenCalledTimes(6);
+    expect(playlist.getCurrentSong()).not.toBe(undefined);
   });
 });
