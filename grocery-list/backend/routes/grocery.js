@@ -7,8 +7,8 @@ router.post('/', (req, res) => {
   res.send(GroceryController.createGrocery());
 });
 
-router.get('/', (req, res) => {
-  res.send(GroceryController.readGroceries());
+router.get('/', async (req, res) => {
+  res.send(await GroceryController.readGroceries());
 });
 
 export default router;
