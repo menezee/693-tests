@@ -1,0 +1,23 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src",
+    "dev": "nodemon src",
+    "load": "artillery quick -o results.json --count 5 -n 15 -k ${npm_config_url}",
+    "load:report": "artillery report -o results.html results.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.3.3"
+  },
+  "devDependencies": {
+    "artillery": "^2.0.0-16",
+    "nodemon": "^2.0.16"
+  }
+}

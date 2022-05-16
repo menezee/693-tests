@@ -40,9 +40,13 @@ describe('Playlist', () => {
 
   test('spy isPlaying', () => {
     const isPlayingMock = jest.spyOn(playlist, 'isPlaying');
-    isPlayingMock.mockImplementation(() => true);
+    // isPlayingMock.mockImplementation(() => true);
 
-    expect(playlist.isPlaying()).toBe(true);
+    playlist.isPlaying();
+    playlist.isPlaying();
+    expect(isPlayingMock).toHaveBeenCalled();
+    expect(isPlayingMock).toBeCalledTimes(2);
+    expect(isPlayingMock).toBeCalledWith();
   });
 
   test('verifica se mock anterior ficou no escopo do teste isPlaying', () => {
