@@ -31,7 +31,7 @@ class Playlist {
   }
 
   next() {
-    this.#currentSong += 1;
+    this.#currentSong = (this.#currentSong + 1) % this.#songs.length;
   }
 }
 
