@@ -11,7 +11,7 @@ app.use('/load', (req, res) => {
 });
 
 (async function() {
-  console.log(await db.connect());
+  await db.connect();
   app.listen(3001, () => {
     console.log('listening on http://localhost:3001');
   });
